@@ -1,10 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
+
+import EventHomepage from './components/Homepage/EventHomepage';
+
 import EventHomepage from './components/EventHomepage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Show from './components/Show';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+
 
 function App() {
   return (
