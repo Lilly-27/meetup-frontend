@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import EventHomepage from './components/EventHomepage';
+import EventHomepage from './components/Homepage/EventHomepage';
 function App() {
   return (
     <div className="App">
