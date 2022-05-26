@@ -1,10 +1,13 @@
-import { Route } from 'react-router-dom';
-
-
+import { Route, Routes } from 'react-router-dom';
+import EventHomepage from './components/EventHomepage';
 function App() {
   return (
     <div className="App">
           <h1> Hello Cecilia </h1>
+          <Routes >
+          <Route exact path='/events' element={<EventHomepage/>}/>
+          </Routes>
+          
     </div>
   );
 }
