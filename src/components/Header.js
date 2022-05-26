@@ -2,7 +2,16 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>Our Header</div>
+    <section className="header-container">
+      <div className="app-link">
+        <a href="#">Meetup For Devs</a>
+      </div>
+
+      <div className="log-sign-links">
+        <a href="#">Log in</a>
+        <a href="#">Sign Up</a>
+      </div>
+    </section>
   )
 }
 
