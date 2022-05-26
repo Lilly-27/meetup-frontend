@@ -3,25 +3,18 @@ import EventHomepage from './components/EventHomepage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Show from './components/Show';
-import CreateUser from './components/CreateUser';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
     <div className="App">
-          <div className="Header">
-            <Header />
-          </div>
+          
 
-          <div className="Show">
-            <Show />
-          </div>
-
-          <div className="Footer">
-            <Footer />
-          </div>
           <Routes >
+          <Route exact path='/' element={<Show/>}/>
           <Route exact path='/events' element={<EventHomepage/>}/>
+          <Route exact path='/signup' element={<SignUp/>}/>
           </Routes>
           
     </div>

@@ -1,8 +1,22 @@
+import Header from './Header'
+import Footer from './Footer'
 import React from 'react'
 
 function Show() {
   return (
-    <div>This is our main showpage.</div>
+    <div className="homepage">
+        <div className="Header">
+            <Header />
+        </div>
+
+        {/* <div className="Show">
+            <Show />
+        </div> */}
+
+        <div className="Footer">
+            <Footer />
+        </div>
+    </div>
   )
 }
 
