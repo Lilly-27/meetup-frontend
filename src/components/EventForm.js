@@ -18,20 +18,39 @@ function EventForm() {
   // Note that we need to use `htmlFor` instead of `for` in JSX
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="event_name">Event Name:</label>
+      <label htmlFor="event_name">Event Name: </label>
       <input
         id="event_name"
         type="text"
         onChange={handleChange}
         value={formState.event_name}
       />
-      <label htmlFor="date">Date:</label>
+      <br/>
+      <label htmlFor="date">Date: </label>
       <input
         id="date"
         type="text"
         onChange={handleChange}
         value={formState.date}
       />
+      <br/>
+      <label htmlFor="Field 3">Field 3: </label>
+      <input
+        id="field-3"
+        type="text"
+        onChange={handleChange}
+        value={formState.field-3}
+      />
+      <br/>
+      <label htmlFor="Field 4">Field 4: </label>
+      <input
+        id="field-4"
+        type="text"
+        onChange={handleChange}
+        value={formState.field-4}
+      />
+
+
       <button type="submit">Submit</button>
     </form>
   );
