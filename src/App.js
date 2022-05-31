@@ -1,4 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
+
+import EventHomepage from './components/EventHomepage';
+import EventDetails from './components/EventDetails';
+import EventForm from './components/EventForm';
+function App() {
+  return (
+    <div className="App">
+=======
 import EventDisplay from './components/EventDisplay';
 import EventHomepage from './components/Homepage/EventHomepage';
 
@@ -14,11 +22,17 @@ function App() {
     <div className="App">
           
 
+
           <Routes >
           <Route exact path='/' element={<Show/>}/>
           <Route exact path='/events' element={<EventHomepage/>}/>
+
+          <Route exact path='/events/:id' element={<EventDetails/>}/>
+          <Route exact path='/event-form' element={<EventForm/>}/>
+
           <Route exact path='/eventDisplay' element ={<EventDisplay/>}/>
           <Route exact path='/signup' element={<SignUp/>}/>
+
           </Routes>
           
     </div>
