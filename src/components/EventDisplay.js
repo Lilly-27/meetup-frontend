@@ -1,10 +1,13 @@
 import React, { useState, useEffect }from 'react'
-
+import { useParams } from 'react-router-dom';
 
 const EventDisplay = () => {
+    
+    let {id} = useParams();
+
 const [events, setEvents]= useState([])
     useEffect(() => {
-        fetch('https://meetup-for-devs.herokuapp.com/events')
+        fetch(`https://meetup-for-devs.herokuapp.com/events`)
         .then(res => res.json())
         .then(json => {
           setEvents(json)
@@ -27,19 +30,12 @@ const [events, setEvents]= useState([])
       events.map(events=> (
       <div>
         
-    <div key={event_blurb}>{events.event_blurb}</div>
+    <div >{events.event_blurb}</div>
 
-    <div>{events.address}</div>
 
-    <div>{events.date}</div>
 
-    <div>{events.time}</div>
+    <img src ={events.event_picture} />
 
-    <div>{events.event_picture}</div>
-
-    <div>{events.user}</div>
-
-    <div>{events.event_type}</div>
 
     </div>
       ))
