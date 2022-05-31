@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import SearchBar from './SearchBar'
+import SearchFetch from './SearchFetch'
 const EventHomepage = () => {
     const [events, SetEvents] = useState([])
 
 return(
 <div>
-    {/* <SearchBar /> */}
+    <SearchFetch />
     <h1>Event Homepage</h1>
     <Link to={`/events/${events.id}`}>
         <div className='new-event-btn'>

@@ -1,36 +1,82 @@
 import React, { useState, useEffect }  from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 const url = 'https://meetup-for-devs.herokuapp.com/events'
-const response = await fetch('http://localhost:3000/events', { mode: 'cors' });
+const response =  fetch('http://localhost:3000/events', { mode: 'cors' });
 
+export default function SearchFetch(){
 
-const SearchFetch = () => {
-    const [events, setEvents] = useState({
-        slug: "",
-        results: []
-    });
+const [urlData, setUrlData] = useState([])
+const [results, setResults] = useState([])
+const [searchInput, setSearchInput] = useState('')
+useEffect(() => {
+    axios.get(url)
+    .then((response) => {
+        setUrlData(response.data);
+    })
+}, [])
 
-
-useEffect(()=>{
-    if(events.slug !== "") {
-        const timeoutId = setTimeout(()=> {
-            const fetch = async () => {
-                try{
-                    const res = await url.get(`/${events.slug}`);
-                    setEvents({...events, results: res.events});
-                }catch (err) {
-                    console.error(err)
-                }
-            };
-            fetch()
-        }, 1000);
-        return () => clearTimeout(timeoutId);
+const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    if(searchInput !== ''){
+        const results = urlData.filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        setResults(results)
+    }else{
+        setResults(urlData)
     }
-    }, [events.slug]);
-
-  return (
-      <div>{events, setEvents}</div>
+}
+return (
+    <div style={{ padding: 20 }}>
    
-  )
+    </div>
+)
 }
 
-export default SearchFetch
+
+
+
+
+
+
+
+
+// const url = 'https://meetup-for-devs.herokuapp.com/events'
+
+// const response =  fetch('http://localhost:3000/events', { mode: 'cors' });
+
+
+// const SearchFetch = () => {
+//     const [events, setEvents] = useState({
+//         slug: " ",
+//         results: []
+//     });
+
+
+// useEffect(()=>{
+//     const url = 'https://meetup-for-devs.herokuapp.com/events'
+
+//     if(events.slug !== "") {
+//         const timeoutId = setTimeout(()=> {
+//             const fetch = async () => {
+//                 try{
+//                     const res = await url.get(`/${events.slug}`);
+//                     setEvents({...events, results: res.events});
+//                 }catch (err) {
+//                     console.error(err)
+//                 }
+//             };
+//             fetch()
+//         }, 1000);
+//         return () => clearTimeout(timeoutId);
+//     }
+//     }, [events.slug]);
+
+//   return (
+//       <div>{events, setEvents}</div>
+   
+//   )
+// }
+
+// export default SearchFetch
