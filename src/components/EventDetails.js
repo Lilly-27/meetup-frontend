@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
+
 
 function EventDetails(props) {
     let {id} = useParams();
@@ -24,11 +24,12 @@ function EventDetails(props) {
     return (
         <div className="details-container">
           <img
-            src={event.image}
-            alt={event.name}
+            src={event.event_picture}
+            alt={event.event_blurb}
           />
           <div className="details">
             <h2>{event.date}</h2>
+            <h2>{event.event_blurb}</h2>
           </div>
         </div>
       );
