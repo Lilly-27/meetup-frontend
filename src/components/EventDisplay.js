@@ -27,7 +27,7 @@ const [events, setEvents]= useState([])
       events.map(events=> (
       <div>
         
-    <div key={event_blurb}>{events.event_blurb}</div>
+    <div>{events.event_blurb}</div>
 
     <div>{events.address}</div>
 

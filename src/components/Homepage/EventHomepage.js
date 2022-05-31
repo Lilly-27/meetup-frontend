@@ -8,7 +8,7 @@ return(
 <div>
     <SearchFetch />
     <h1>Event Homepage</h1>
-    <Link to={`/events/${events.id}`}>
+    <Link to={`/event-form`}>
         <div className='new-event-btn'>
             <h2>Make a new event!</h2>
         </div>
