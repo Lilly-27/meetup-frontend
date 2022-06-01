@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
-  const initialState = { username: '', password: '' };
+  const initialState = { event_name: '', date: '' };
   const [formState, setFormState] = useState(initialState);
 
   const handleChange = event => {

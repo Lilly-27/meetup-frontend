@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import EventDisplay from './components/EventDisplay';
 import EventHomepage from './components/Homepage/EventHomepage';
-import EventDetails from './components/EventDetails';
+import EventDetails from './components/UpdateRoute/EventDetails';
 import EventForm from './components/EventForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
