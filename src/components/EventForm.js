@@ -44,21 +44,51 @@ function EventForm() {
         value={formState.date}
       />
       <br/>
-      <label htmlFor="Field 3">Field 3: </label>
+
+      <label htmlFor="time">Time: </label>
       <input
-        id="field-3"
+        id="time"
         type="text"
         onChange={handleChange}
-        value={formState.field-3}
+        value={formState.time}
       />
       <br/>
-      <label htmlFor="Field 4">Field 4: </label>
+
+      <label htmlFor="address">Address: </label>
       <input
-        id="field-4"
+        id="address"
         type="text"
         onChange={handleChange}
-        value={formState.field-4}
+        value={formState.address}
       />
+      <br/>
+
+      <label htmlFor="event_blurb">Event description: </label>
+      <input
+        id="event_blurb"
+        type="text"
+        onChange={handleChange}
+        value={formState.event_blurb}
+      />
+      <br/>
+
+      <label htmlFor="event_picture">Event picture: </label>
+      <input
+        id="event_picture"
+        type="text"
+        onChange={handleChange}
+        value={formState.event_picture}
+      />
+      <br/>
+
+      <label htmlFor="tag">Tag (test): </label>
+      <input
+        id="tag"
+        type="text"
+        onChange={handleChange}
+        value={formState.tag}
+      />
+    
 
       <div className="radio"> 
             <label>
