@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
   const initialState = { username: '', password: '' };
@@ -9,14 +10,22 @@ function EventForm() {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // do something with the data in the component state
+  
+    await fetch(URL, {
+      method: 'post',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formState)
+  })
+
     console.log(formState);
-    // clear the form
+    
     setFormState(initialState);
   };
-  // Note that we need to use `htmlFor` instead of `for` in JSX
+ 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="event_name">Event Name: </label>
@@ -51,7 +60,26 @@ function EventForm() {
         value={formState.field-4}
       />
 
+      <div className="radio"> 
+            <label>
+              <input type="radio" name="tag" id="coffee"
+              onChange={handleChange}
+              value={formState.tag}
+            
+              />
+             Coffee Chats
+            </label>
 
+            <label>
+              <input type="radio" name="tag" value="social" />
+             Social
+            </label>
+            <label>
+              <input type="radio" name="tag" value="coding_sessions" />
+              Coding Sessions
+            </label>
+
+          </div>
       <button type="submit">Submit</button>
     </form>
   );

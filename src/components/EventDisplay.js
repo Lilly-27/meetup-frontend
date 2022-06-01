@@ -7,7 +7,10 @@ const EventDisplay = () => {
 
 const [events, setEvents]= useState([])
     useEffect(() => {
+
         fetch(`https://meetup-for-devs.herokuapp.com/api/events`)
+
+
         .then(res => res.json())
         .then(json => {
           setEvents(json)
@@ -30,7 +33,14 @@ const [events, setEvents]= useState([])
       events.map(events=> (
       <div>
         
-    <div >{events.event_blurb}</div>
+
+
+    <div>{events.event_blurb}</div>
+
+    <div>{events.address}</div>
+
+    <div>{events.date}</div>
+
 
 
 
