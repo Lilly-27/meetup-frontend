@@ -1,7 +1,6 @@
 import React, { useState, useEffect }from 'react'
 import { useParams, Link } from 'react-router-dom';
-import EventDetails from './EventDetails';
-import EventHomepage from './Homepage/EventHomepage';
+
 
 const EventDisplay = () => {
     
@@ -49,6 +48,7 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
         <h3>Return to Homepage</h3>
         </Link>
     </div>
+
 
     </div>
     
