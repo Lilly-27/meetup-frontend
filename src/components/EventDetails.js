@@ -6,7 +6,7 @@ function EventDetails(props) {
     let {id} = useParams();
     const [event, setEvent] = useState(null);
     useEffect(() => {
-        fetch( `https://meetup-for-devs.herokuapp.com/events/${id}`)
+        fetch( `https://meetup-for-devs.herokuapp.com/api/events/${id}`)
         .then(res => res.json())
         .then(res => setEvent(res))
         .catch(console.error)
