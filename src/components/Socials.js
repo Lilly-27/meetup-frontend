@@ -1,16 +1,10 @@
 import React, { useState, useEffect }from 'react'
-import { useParams } from 'react-router-dom';
 
-const EventDisplay = () => {
-    
-    let {id} = useParams();
 
+const Socials = () => {
 const [events, setEvents]= useState([])
     useEffect(() => {
-
-        fetch(`https://meetup-for-devs.herokuapp.com/api/events`)
-
-
+        fetch('https://meetup-for-devs.herokuapp.com/api/events/socials')
         .then(res => res.json())
         .then(json => {
           setEvents(json)
@@ -20,27 +14,27 @@ const [events, setEvents]= useState([])
         .catch(console.error)
       }, []
     );
-
+    
   return (
       events.map(events=> (
       <div>
         
-
-
     <div>{events.event_blurb}</div>
 
     <div>{events.address}</div>
 
     <div>{events.date}</div>
 
+    <div>{events.time}</div>
 
+    <div>{events.event_picture}</div>
 
+    <div>{events.user}</div>
 
-    <img src ={events.event_picture} />
-
+    <div>{events.event_type}</div>
 
     </div>
-    ))
-    )}
+      ))
+      )}
 
-export default EventDisplay
+export default Socials
