@@ -1,7 +1,8 @@
 import React, { useState, useEffect }  from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-const url = 'https://meetup-for-devs.herokuapp.com/events'
+// import TextField from '@mui/material/TextField'
+const url = `https://meetup-for-devs.herokuapp.com/events`
 const response =  fetch('http://localhost:3000/events', { mode: 'cors' });
 
 export default function SearchFetch(){
@@ -28,8 +29,14 @@ const searchItems = (searchValue) => {
     }
 }
 return (
-    <div style={{ padding: 20 }}>
-   
+    <div >
+   <div className='search'>
+       {/* <TextField
+       id='outlined-basic'
+       onChange={setSearchInput}
+       variant='outlined'
+       fullWidth label= 'Search'/> */}
+   </div>
     </div>
 )
 }
