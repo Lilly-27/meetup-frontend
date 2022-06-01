@@ -21,14 +21,6 @@ const [events, setEvents]= useState([])
       }, []
     );
 
-
-
-
-
-
-
-
-
   return (
       events.map(events=> (
       <div>
@@ -40,7 +32,7 @@ const [events, setEvents]= useState([])
 
 
     </div>
-      ))
-      )}
+    ))
+    )}
 
 export default EventDisplay
