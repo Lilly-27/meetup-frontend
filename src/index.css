@@ -1,7 +1,7 @@
-
-/* Header CSS */
-
-/* Footer CSS */
-.footer-container{
-    background-color: black;
-    };
+.homepage {
+    display: flexbox;
+  
+    align-items: center;
+    justify-content: center;
+    
+}

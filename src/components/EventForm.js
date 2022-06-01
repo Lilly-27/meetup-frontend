@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
   const initialState = { username: '', password: '' };
@@ -9,14 +10,22 @@ function EventForm() {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // do something with the data in the component state
+  
+    await fetch(URL, {
+      method: 'post',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formState)
+  })
+
     console.log(formState);
-    // clear the form
+    
     setFormState(initialState);
   };
-  // Note that we need to use `htmlFor` instead of `for` in JSX
+ 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="event_name">Event Name: </label>
@@ -35,23 +44,72 @@ function EventForm() {
         value={formState.date}
       />
       <br/>
-      <label htmlFor="Field 3">Field 3: </label>
+
+      <label htmlFor="time">Time: </label>
       <input
-        id="field-3"
+        id="time"
         type="text"
         onChange={handleChange}
-        value={formState.field-3}
+        value={formState.time}
       />
       <br/>
-      <label htmlFor="Field 4">Field 4: </label>
+
+      <label htmlFor="address">Address: </label>
       <input
-        id="field-4"
+        id="address"
         type="text"
         onChange={handleChange}
-        value={formState.field-4}
+        value={formState.address}
       />
+      <br/>
 
+      <label htmlFor="event_blurb">Event description: </label>
+      <input
+        id="event_blurb"
+        type="text"
+        onChange={handleChange}
+        value={formState.event_blurb}
+      />
+      <br/>
 
+      <label htmlFor="event_picture">Event picture: </label>
+      <input
+        id="event_picture"
+        type="text"
+        onChange={handleChange}
+        value={formState.event_picture}
+      />
+      <br/>
+
+      <label htmlFor="tag">Tag (test): </label>
+      <input
+        id="tag"
+        type="text"
+        onChange={handleChange}
+        value={formState.tag}
+      />
+    
+
+      <div className="radio"> 
+            <label>
+              <input type="radio" name="tag" id="coffee"
+              onChange={handleChange}
+              value={formState.tag}
+            
+              />
+             Coffee Chats
+            </label>
+
+            <label>
+              <input type="radio" name="tag" value="social" />
+             Social
+            </label>
+            <label>
+              <input type="radio" name="tag" value="coding_sessions" />
+              Coding Sessions
+            </label>
+
+          </div>
       <button type="submit">Submit</button>
     </form>
   );

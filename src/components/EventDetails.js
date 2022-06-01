@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 
 function EventDetails(props) {
     let {id} = useParams();
     const [event, setEvent] = useState(null);
     useEffect(() => {
-        fetch( `https://meetup-for-devs.herokuapp.com/events/${id}`)
+        fetch( `https://meetup-for-devs.herokuapp.com/api/events/${id}`)
         .then(res => res.json())
         .then(res => setEvent(res))
         .catch(console.error)
@@ -30,7 +30,16 @@ function EventDetails(props) {
           <div className="details">
             <h2>{event.date}</h2>
             <h2>{event.event_blurb}</h2>
+            <h2>People attending: </h2>
+            <ul>
+              <li></li>
+            </ul>
           </div>
+          <>
+        <Link to={`/events`}>
+        <h1>Return to Homepage</h1>
+        </Link>
+    </>
         </div>
       );
 }
