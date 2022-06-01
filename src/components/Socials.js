@@ -1,10 +1,10 @@
 import React, { useState, useEffect }from 'react'
 
 
-const EventDisplay = () => {
+const Socials = () => {
 const [events, setEvents]= useState([])
     useEffect(() => {
-        fetch('https://meetup-for-devs.herokuapp.com/api/events')
+        fetch('https://meetup-for-devs.herokuapp.com/api/events/socials')
         .then(res => res.json())
         .then(json => {
           setEvents(json)
@@ -14,7 +14,7 @@ const [events, setEvents]= useState([])
         .catch(console.error)
       }, []
     );
-
+    
   return (
       events.map(events=> (
       <div>
@@ -34,7 +34,7 @@ const [events, setEvents]= useState([])
     <div>{events.event_type}</div>
 
     </div>
-    ))
-    )}
+      ))
+      )}
 
-export default EventDisplay
+export default Socials

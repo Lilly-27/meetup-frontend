@@ -30,7 +30,12 @@ function EventDetails(props) {
           <div className="details">
             <h2>{event.date}</h2>
             <h2>{event.event_blurb}</h2>
+            <h2>People attending: </h2>
+            <ul>
+              <li></li>
+            </ul>
           </div>
+
         </div>
       );
 }

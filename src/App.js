@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Show from './components/Show';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Socials from './components/Socials';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 
           <Route exact path='/eventDisplay' element ={<EventDisplay/>}/>
           <Route exact path='/signup' element={<SignUp/>}/>
+          <Route exact path='/socials' element={<Socials/>}/>
 
           </Routes>
           
