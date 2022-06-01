@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
+
 
 function EventDetails(props) {
     let {id} = useParams();
     const [event, setEvent] = useState(null);
     useEffect(() => {
-        fetch( `https://meetup-for-devs.herokuapp.com/events/${id}`)
+        fetch( `https://meetup-for-devs.herokuapp.com/api/events/${id}`)
         .then(res => res.json())
         .then(res => setEvent(res))
         .catch(console.error)
@@ -24,11 +24,12 @@ function EventDetails(props) {
     return (
         <div className="details-container">
           <img
-            src={event.image}
-            alt={event.name}
+            src={event.event_picture}
+            alt={event.event_blurb}
           />
           <div className="details">
             <h2>{event.date}</h2>
+            <h2>{event.event_blurb}</h2>
           </div>
         </div>
       );

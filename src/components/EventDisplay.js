@@ -7,7 +7,7 @@ const EventDisplay = () => {
 
 const [events, setEvents]= useState([])
     useEffect(() => {
-        fetch(`https://meetup-for-devs.herokuapp.com/events`)
+        fetch(`https://meetup-for-devs.herokuapp.com/api/events`)
         .then(res => res.json())
         .then(json => {
           setEvents(json)
