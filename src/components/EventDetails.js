@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 
 function EventDetails(props) {
@@ -35,7 +35,11 @@ function EventDetails(props) {
               <li></li>
             </ul>
           </div>
-
+          <>
+        <Link to={`/events`}>
+        <h1>Return to Homepage</h1>
+        </Link>
+    </>
         </div>
       );
 }
