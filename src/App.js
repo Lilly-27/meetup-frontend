@@ -15,17 +15,13 @@ function App() {
     <div className="App">
           
 
-
           <Routes >
           <Route exact path='/' element={<Show/>}/>
           <Route exact path='/events' element={<EventHomepage/>}/>
-
-          <Route exact path='/events/:id' element={<EventDetails/>}/>
-          <Route exact path='/event-form' element={<EventForm/>}/>
-
           <Route exact path='/eventDisplay' element ={<EventDisplay/>}/>
           <Route exact path='/signup' element={<SignUp/>}/>
-
+          <Route exact path='/events/:id' element={<EventDetails/>}/>
+          <Route exact path='/event-form' element={<EventForm/>}/>
           </Routes>
           
     </div>
