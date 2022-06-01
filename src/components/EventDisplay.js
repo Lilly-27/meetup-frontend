@@ -17,7 +17,6 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
         .then(json => {
           setEvents(json)
       
-      
         })
         .catch(console.error)
       }, []
