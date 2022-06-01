@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const EventDisplay = () => {
     
@@ -27,15 +27,7 @@ const [events, setEvents]= useState([])
         
 
 
-    <div>{events.event_blurb}</div>
-
-    <div>{events.address}</div>
-
-    <div>{events.date}</div>
-
-
-
-
+    <div>{events.event_name}</div>
     <img src ={events.event_picture} />
 
 
