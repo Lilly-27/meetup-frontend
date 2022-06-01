@@ -9,7 +9,6 @@ const [events, setEvents]= useState([])
         .then(json => {
           setEvents(json)
       
-      
         })
         .catch(console.error)
       }, []
@@ -17,17 +16,11 @@ const [events, setEvents]= useState([])
 
 
 
-
-
-
-
-
-
   return (
       events.map(events=> (
       <div>
         
-    <div key={event_blurb}>{events.event_blurb}</div>
+    <div>{events.event_blurb}</div>
 
     <div>{events.address}</div>
 
