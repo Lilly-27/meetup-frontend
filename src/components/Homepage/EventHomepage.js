@@ -30,13 +30,13 @@ return(
     <Link to={`/events/display`}>
         <div className='tags'>All</div>
     </Link>
-    <Link to={`/events/`}>
+    <Link to={`/events/coffee`}>
         <div className='tags'>Coffee Chats</div>
     </Link>
-    <Link to={`/events/`}>
+    <Link to={`/events/socials`}>
         <div className='tags'>Social</div>
     </Link>
-    <Link to={`/events/`}>
+    <Link to={`/events/coding`}>
         <div className='tags'>Coding Sessions</div>
      </Link>
     <div>
