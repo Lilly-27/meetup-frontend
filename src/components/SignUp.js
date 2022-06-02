@@ -6,15 +6,41 @@ import StepTwo from './SignUpForm/StepTwo';
 import FinalStep from './SignUpForm/FinalStep';
 import Success from './SignUpForm/Success';
 
+const URL = 'https://meetup-for-devs.herokuapp.com/api/users'
 
 const SignUp = () => {
-  const[step, setStep]=useState(0);
-  const initialState = { email: '', password: '', name: '', company:'', link_to_github:'', location:'', hobbies:'' };
+  const initialState = { 
+    email:"", 
+    password:"", 
+    name:"", 
+    company:"", 
+    link_to_github:"", 
+    location:"", 
+    hobbies:"" };
+    
   const [formState, setFormState] = useState(initialState);
 
   const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    await fetch(URL, {
+      method: 'post',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formState)
+  })
+
+    console.log(formState);
+    
+    setFormState(initialState);
+  };
+
+  const[step, setStep]=useState(0);
 
   const FormSteps = ["Step One: Sign Up", "Step Two: Personal Info", "Step Three: Hobbies", "Success"];
   const StepDisplay = () => {
