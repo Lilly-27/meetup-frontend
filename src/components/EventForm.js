@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import DropDown from './DropDown';
+
 
 const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
-  const initialState = { event_name: '', date: '' };
+  const initialState = { event_name: '', date: '' , tag: ''};
   const [formState, setFormState] = useState(initialState);
 
   const handleChange = event => {
@@ -24,11 +24,12 @@ function EventForm() {
   })
 
     console.log(formState);
-    // console.log(tagState)
     
    setFormState(initialState);
     
   };
+
+  
  
   return (
     <form onSubmit={handleSubmit}>
@@ -85,15 +86,23 @@ function EventForm() {
       />
       <br/>
 
-      <label htmlFor="tag">Tag (test): </label>
+      {/* <label htmlFor="tag">Tag (test): </label>
       <input
         id="tag"
         type="text"
         onChange={handleChange}
         value={formState.tag}
       />
-    
-    <DropDown/>
+     */}
+    <label>
+            Event Type: 
+          <select onChange={handleChange} id="tag" type="text" value ={formState.tag}>
+            <option id="tag" value="please_select">Please choose an Option</option>
+            <option id="tag" value="coffee_chats">Coffee Chats</option>
+            <option id="tag" value="coding_sessions">Coding Sessions</option>
+            <option id= "tag" value="socials">Socials</option>
+          </select>
+          </label>
 
 
       <button type="submit">Submit</button>
