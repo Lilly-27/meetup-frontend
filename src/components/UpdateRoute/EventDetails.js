@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link } from 'react-router-dom'
-
+import { useParams, Link, Route } from 'react-router-dom'
+import DeleteEvent from './DeleteEvent';
 
 function EventDetails(props) {
     let {id} = useParams();
@@ -36,6 +36,16 @@ function EventDetails(props) {
             </ul>
           </div>
           <>
+          <form >
+          <Link to={`/events/display/${id}/delete`}>
+         
+     <button id="delete" >
+            DELETE
+
+          </button>
+          </Link>
+    </form>
+          
         <Link to={`/events`}>
         <h1>Return to Homepage</h1>
         </Link>

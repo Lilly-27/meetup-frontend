@@ -1,16 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <section className="header-container">
-      <div className="app-link">
-        <a href="#">Meetup For Devs</a>
-      </div>
+    <Link to={`/`}>
+        <div className='app-link'><h2>Meet Up for Devs</h2></div>
+    </Link>
 
-      <div className="log-sign-links">
-        <a href="#">Log in</a>
-        <a href="#">Sign Up</a>
-      </div>
+    <Link to={`/login`}>
+        <div className='login-link'><h4>Log In</h4></div>
+    </Link>
+    
+    <Link to={`/signup`}>
+        <div className='signup-link'><h4>Sign Up</h4></div>
+    </Link>
     </section>
   )
 }
