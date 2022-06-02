@@ -7,7 +7,9 @@ const Footer = () => {
         <div className="footer-container">
             <div className="create-event">
                 <h4>Create your own event.</h4>
+                <Link to={'/event-form'}>
                 <button>Get Started</button>
+                </Link>
             </div>
 
             <div className="links-container">

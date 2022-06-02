@@ -26,7 +26,7 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     
       
       events.map(events=> (
-    <div>
+    <div className='display'>
        
   
     

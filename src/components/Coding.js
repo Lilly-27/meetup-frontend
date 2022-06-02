@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 
 const Coding = () => {
     
-    let {_id} = useParams();
+    let {id} = useParams();
 
 const [events, setEvents]= useState([])
 const url= `https://meetup-for-devs.herokuapp.com/api/codingsessions`

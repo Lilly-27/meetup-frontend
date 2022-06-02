@@ -2,7 +2,32 @@
          bottom: 0}
 
 /* SIGN UP PAGE */
-.App {
+/* .App {
+    display:grid;
+    place-items:center;
+} */
+/* Event styling */
+.display {
+    display:grid;
+    place-items:center;
+}
+.homepage {
+    display:grid;
+    place-items:center;
+}
+.popular {
+    display:grid;
+    place-items:center;
+}
+.details-container {
+    display:grid;
+    place-items:center;
+}
+.update {
+    display:grid;
+    place-items:center;
+}
+.event-form{
     display:grid;
     place-items:center;
 }

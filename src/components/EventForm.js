@@ -12,20 +12,19 @@ function EventForm() {
 
 const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
-function EventForm() {
+// function EventForm() {
     const navigate= useNavigate()
-  const initialState = { event_name: '', date: '' };
-  const [formState, setFormState] = useState(initialState);
+//   const [formState, setFormState] = useState(initialState);
 
 
 
 
 
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
+// const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
-function EventForm() {
-  const initialState = { event_name: '', date: '' , tag: ''};
-  const [formState, setFormState] = useState(initialState);
+// function EventForm() {
+//   const initialState = { event_name: '', date: '' , tag: ''};
+//   const [formState, setFormState] = useState(initialState);
 
 
 
@@ -56,7 +55,7 @@ function EventForm() {
   
  
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='event-form'>
       <label htmlFor="event_name">Event Name: </label>
       <input
         id="event_name"
@@ -130,5 +129,5 @@ function EventForm() {
       </form>
   );
 
-}}}
+}
 export default EventForm;
