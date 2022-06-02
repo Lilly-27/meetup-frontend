@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-
+import "./App.css";
 import EventDisplay from './components/EventDisplay';
 import EventHomepage from './components/Homepage/EventHomepage';
 import EventDetails from './components/UpdateRoute/EventDetails';
@@ -10,20 +10,21 @@ import Show from './components/Show';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Socials from './components/Socials';
+import UserForm from './components/UserForm';
 import DeleteEvent from './components/UpdateRoute/DeleteEvent';
 import UpdateEvent from './components/UpdateRoute/UpdateEvent';
+
 function App() {
   return (
     <div className="App">
           
-
           <Routes >
           <Route exact path='/' element={<Show/>}/>
           <Route exact path='/events' element={<EventHomepage/>}/>
           <Route exact path='/events/display' element ={<EventDisplay/>}/>
           <Route exact path='/signup' element={<SignUp/>}/>
           <Route exact path='/login' element={<Login/>}/>
-
+          <Route exact path='/user' element={<UserForm/>}/>
           <Route exact path='/socials' element={<Socials/>}/>
 
 
