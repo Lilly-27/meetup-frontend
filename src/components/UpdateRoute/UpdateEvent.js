@@ -1,43 +1,50 @@
-import React, { useState } from 'react';
 
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
-function EventForm() {
-  const initialState = { event_name: '', date: '' };
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
+
+function UpdateEvent() {
+    const navigate = useNavigate()
+
+    let {id} = useParams();
+    const URL = `https://meetup-for-devs.herokuapp.com/api/events/${id}`
+
+  const initialState = {};
   const [formState, setFormState] = useState(initialState);
-//   const initialTag = { tag: '' }
-//   const[tagState, setTagState] = useState(initialTag)
-  const handleChange = event => {
+    const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
 
-//   const handleCoffee = () => {
-//     setTagState( `coffee_chats`)
-//   }
-//   const handleCoding = () => {
+  useEffect(()=>{
 
-//     setTagState( `coding_sessions`)
-//   }
-//   const handleSocial = () => {
-//     setTagState( `socials`)
-//   }
+
+      console.log(id)
+      fetch(URL)
+      .then(res => res.json()
+      .then(json => {
+        console.log(json)
+        setFormState(json)
+      }))
+  },[])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
   
     await fetch(URL, {
-      method: 'post',
+      method: 'put',
       headers: {
           'Content-Type': 'application/json',
       },
       body: JSON.stringify(formState)
+     
   })
-
+  navigate(`/events`)
     console.log(formState);
     
     setFormState(initialState);
   };
- 
+ console.log(formState)
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="event_name">Event Name: </label>
@@ -46,6 +53,7 @@ function EventForm() {
         type="text"
         onChange={handleChange}
         value={formState.event_name}
+        
       />
       <br/>
       <label htmlFor="date">Date: </label>
@@ -102,51 +110,11 @@ function EventForm() {
       />
     
 
-      {/* <div className="radio"> 
-            <label>
-              <input type="radio" name="tag" id="coffee"
-              onChange={handleChange}
-              value={formState.tag}
-            
-              />
-             Coffee Chats
-            </label>
-
-            <label>
-              <input type="radio" name="tag" value="social" />
-             Social
-            </label>
-            <label>
-              <input type="radio" name="tag" value="coding_sessions" />
-              Coding Sessions
-            </label> */}
-
-          {/* </div> */}
-{/* 
-          <button type="submit"
-           id="tag"
-           type="text"
-           onChange={handleChange}
-           value={handleCoffee}
-          >Coffee Chats</button>
-          
-          <button type="submit"
-           id="tag"
-           type="text"
-           onChange={handleChange}
-           value={handleSocial}
-          >Socials</button>
-          
-          <button type="submit"
-           id="tag"
-           type="text"
-           onChange={handleChange}
-           value={handleCoding}
-          >Coding Sessions</button> */}
-
+   
 
       <button type="submit">Submit</button>
     </form>
   );
 }
-export default EventForm;
+
+export default UpdateEvent
