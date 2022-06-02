@@ -1,12 +1,12 @@
 import React, { useState, useEffect }from 'react'
 import { useParams, Link } from 'react-router-dom';
 
-const Socials = () => {
+const Coding = () => {
     
     let {_id} = useParams();
 
 const [events, setEvents]= useState([])
-const url= `https://meetup-for-devs.herokuapp.com/api/socials`
+const url= `https://meetup-for-devs.herokuapp.com/api/codingsessions`
     useEffect(() => {
 
         fetch(url)
@@ -53,4 +53,4 @@ const url= `https://meetup-for-devs.herokuapp.com/api/socials`
     ))
     )}
 
-export default Socials
+export default Coding

@@ -10,6 +10,8 @@ import Show from './components/Show';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Socials from './components/Socials';
+import Coffee from './components/Coffee';
+import Coding from './components/Coding';
 import DeleteEvent from './components/UpdateRoute/DeleteEvent';
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
           <Route exact path='/signup' element={<SignUp/>}/>
           <Route exact path='/login' element={<Login/>}/>
 
-          <Route exact path='/socials' element={<Socials/>}/>
+          <Route exact path='/events/socials' element={<Socials/>}/>
+          <Route exact path='/events/coffee' element={<Coffee/>}/>
+          <Route exact path='/events/coding' element={<Coding/>}/>
 
 
           <Route exact path='events/display/:id' element={<EventDetails/>}/>
