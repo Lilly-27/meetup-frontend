@@ -1,25 +1,15 @@
 import React, { useState } from 'react';
 
+// API OR NOT
+const URL = 'https://meetup-for-devs.herokuapp.com/api/users'
 
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-function EventForm() {
-  const initialState = { event_name: '', date: '' , tag: ''};
+function UserForm() {
+  const initialState = { username: '', password: '' };
   const [formState, setFormState] = useState(initialState);
 
-import { useNavigate } from 'react-router-dom';
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-function EventForm() {
-    const navigate= useNavigate()
-  const initialState = { event_name: '', date: '' };
-  const [formState, setFormState] = useState(initialState);
-//   const initialTag = { tag: '' }
-//   const[tagState, setTagState] = useState(initialTag)
   const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,18 +21,16 @@ function EventForm() {
       },
       body: JSON.stringify(formState)
   })
-  navigate(`/events`)
+
     console.log(formState);
     
-   setFormState(initialState);
-    
+    setFormState(initialState);
   };
-
-  
  
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="event_name">Event Name: </label>
+      <label htmlFor="name">Name: </label>
+      {/* NEXT STEP WHEN DONE WITH E -> ADD VALUES JUST LIKE THIS */}
       <input
         id="event_name"
         type="text"
@@ -95,20 +83,16 @@ function EventForm() {
       />
       <br/>
 
-  
-    <label>
-            Event Type: 
-          <select onChange={handleChange} id="tag" type="text" value ={formState.tag}>
-            <option id="tag" value="please_select">Please choose an Option</option>
-            <option id="tag" value="coffee_chats">Coffee Chats</option>
-            <option id="tag" value="coding_sessions">Coding Sessions</option>
-            <option id= "tag" value="socials">Socials</option>
-          </select>
-          </label>
-
-
+      <label htmlFor="tag">Tag (test): </label>
+      <input
+        id="tag"
+        type="text"
+        onChange={handleChange}
+        value={formState.tag}
+      />
+    
       <button type="submit">Submit</button>
     </form>
   );
-}}
-export default EventForm;
+}
+export default UserForm;

@@ -29,7 +29,12 @@ function EventDetails(props) {
           />
           <div className="details">
             <h2>{event.date}</h2>
+            <h2>{event.time}</h2>
+            <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
+            <h2>{event.tag}</h2>
+            <h2>{event.user}</h2>
+
             <h2>People attending: </h2>
             <ul>
               <li></li>
@@ -41,6 +46,16 @@ function EventDetails(props) {
          
      <button id="delete" >
             DELETE
+
+          </button>
+          </Link>
+    </form>
+
+    <form >
+          <Link to={`/events/display/${id}/update`}>
+         
+     <button id="update" >
+            UPDATE
 
           </button>
           </Link>

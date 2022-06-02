@@ -42,7 +42,7 @@ return(
     <div>
         <h2>Popular Events Banner</h2>
             <div className=''></div>
-            <Link to={`/events/display/6297f985245618bcd506a47b`} key={events.id}>
+            <Link to={`/events/display/62981a9e2da9143939959167`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>
