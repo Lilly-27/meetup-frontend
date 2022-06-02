@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link } from 'react-router-dom'
-
+import { useParams, Link, Route } from 'react-router-dom'
+import DeleteEvent from './DeleteEvent';
 
 function EventDetails(props) {
     let {id} = useParams();
@@ -29,13 +29,38 @@ function EventDetails(props) {
           />
           <div className="details">
             <h2>{event.date}</h2>
+            <h2>{event.time}</h2>
+            <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
+            <h2>{event.tag}</h2>
+            <h2>{event.user}</h2>
+
             <h2>People attending: </h2>
             <ul>
               <li></li>
             </ul>
           </div>
           <>
+          <form >
+          <Link to={`/events/display/${id}/delete`}>
+         
+     <button id="delete" >
+            DELETE
+
+          </button>
+          </Link>
+    </form>
+
+    <form >
+          <Link to={`/events/display/${id}/update`}>
+         
+     <button id="update" >
+            UPDATE
+
+          </button>
+          </Link>
+    </form>
+          
         <Link to={`/events`}>
         <h1>Return to Homepage</h1>
         </Link>

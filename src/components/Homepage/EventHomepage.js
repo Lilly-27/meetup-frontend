@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
-import EventDetails from '../EventDetails';
+import EventDetails from '../UpdateRoute/EventDetails';
 const EventHomepage = () => {
     const [events, setEvents] = useState([])
     let {id} = useParams();
@@ -42,17 +42,17 @@ return(
     <div>
         <h2>Popular Events Banner</h2>
             <div className=''></div>
-            <Link to={`/events/display/6296b6dbd88c43b2329ce6a5`} key={events.id}>
+            <Link to={`/events/display/6297f985245618bcd506a47b`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>
             </Link>
-            <Link to={`/events/display/6296b6dbd88c43b2329ce6a6`} key={events.id}>
+            <Link to={`/events/display/6297f985245618bcd506a47c`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>
             </Link>
-            <Link to={`/events/display/6297afb8969f22db24f1bae0`} key={events.id}>
+            <Link to={`/events/display/6297f985245618bcd506a47d`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>

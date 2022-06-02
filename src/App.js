@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import "./App.css";
 import EventDisplay from './components/EventDisplay';
 import EventHomepage from './components/Homepage/EventHomepage';
-import EventDetails from './components/EventDetails';
+import EventDetails from './components/UpdateRoute/EventDetails';
 import EventForm from './components/EventForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,6 +11,8 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Socials from './components/Socials';
 import UserForm from './components/UserForm';
+import DeleteEvent from './components/UpdateRoute/DeleteEvent';
+import UpdateEvent from './components/UpdateRoute/UpdateEvent';
 
 function App() {
   return (
@@ -27,6 +29,9 @@ function App() {
 
 
           <Route exact path='events/display/:id' element={<EventDetails/>}/>
+          <Route exact path='events/display/:id/delete' element={<DeleteEvent/>}/>
+          <Route exact path='events/display/:id/update' element={<UpdateEvent/>}/>
+          
           <Route exact path='/event-form' element={<EventForm/>}/>
 
           </Routes>
