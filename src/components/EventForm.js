@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
+import DropDown from './DropDown';
 
 const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
   const initialState = { event_name: '', date: '' };
   const [formState, setFormState] = useState(initialState);
-  const initialTag = { tag: '' }
-  const[tagState, setTagState] = useState(initialTag)
+
   const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
 
-  const handleCoffee = () => {
-    setTagState( `coffee_chats`)
-  }
-  const handleCoding = () => {
-
-    setTagState( `coding_sessions`)
-  }
-  const handleSocial = () => {
-    setTagState( `socials`)
-  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,8 +24,10 @@ function EventForm() {
   })
 
     console.log(formState);
+    // console.log(tagState)
     
-    setFormState(initialState);
+   setFormState(initialState);
+    
   };
  
   return (
@@ -101,48 +93,7 @@ function EventForm() {
         value={formState.tag}
       />
     
-
-      {/* <div className="radio"> 
-            <label>
-              <input type="radio" name="tag" id="coffee"
-              onChange={handleChange}
-              value={formState.tag}
-            
-              />
-             Coffee Chats
-            </label>
-
-            <label>
-              <input type="radio" name="tag" value="social" />
-             Social
-            </label>
-            <label>
-              <input type="radio" name="tag" value="coding_sessions" />
-              Coding Sessions
-            </label> */}
-
-          {/* </div> */}
-
-          <button type="submit"
-           id="tag"
-           type="text"
-           onChange={handleChange}
-           value={handleCoffee}
-          >Coffee Chats</button>
-          
-          <button type="submit"
-           id="tag"
-           type="text"
-           onChange={handleChange}
-           value={handleSocial}
-          >Socials</button>
-          
-          <button type="submit"
-           id="tag"
-           type="text"
-           onChange={handleChange}
-           value={handleCoding}
-          >Coding Sessions</button>
+    <DropDown/>
 
 
       <button type="submit">Submit</button>
