@@ -1,2 +1,126 @@
 .return {position: 'fixed';
          bottom: 0}
+
+/* SIGN UP PAGE */
+.App {
+    display:grid;
+    place-items:center;
+}
+body {
+    margin: 0%;
+    padding: 0%;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container{
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .header {
+    flex: 20%;
+    display: grid;
+    place-items: center;
+  }
+
+.form-container .form-body {
+    flex: 60%;
+}
+  
+.form-container .form-footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+}
+  
+.form-container .form-footer button {
+    border-radius: 7px;
+    width: 100px;
+    height: 40px;
+    background-color: rgba(83, 141, 207, 0.904);
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    margin: 5px;
+}
+
+/* SIGN UP - STEP ONE */
+.stepone-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepone-container input {
+  margin: 5px;
+  width: 200px;
+  height: 40px;
+  padding-left: 5px;
+  font-size: 20px;
+}
+/* SIGN UP - STEP TWO */
+.steptwo-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steptwo-container input {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    padding-left: 5px;
+    font-size: 20px;
+}
+/* SIGN UP - FINAL STEP */
+.finalstep-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.finalstep-container input {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+input {
+    border: 2px solid rgba(83, 141, 207, 0.904);
+    border-radius: 5px;
+}
+  
+input:focus {
+    border: 3px solid rgba(83, 141, 207, 0.904);
+}
+
+/* HEADER */
+
+/* FOOTER */
