@@ -11,7 +11,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Socials from './components/Socials';
 import DeleteEvent from './components/UpdateRoute/DeleteEvent';
-
+import UpdateEvent from './components/UpdateRoute/UpdateEvent';
 function App() {
   return (
     <div className="App">
@@ -29,6 +29,7 @@ function App() {
 
           <Route exact path='events/display/:id' element={<EventDetails/>}/>
           <Route exact path='events/display/:id/delete' element={<DeleteEvent/>}/>
+          <Route exact path='events/display/:id/update' element={<UpdateEvent/>}/>
           
           <Route exact path='/event-form' element={<EventForm/>}/>
 
