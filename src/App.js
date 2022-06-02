@@ -12,6 +12,9 @@ import SignUp from './components/SignUp';
 import Socials from './components/Socials';
 import Coffee from './components/Coffee';
 import Coding from './components/Coding';
+
+import UserForm from './components/UserForm';
+
 import DeleteEvent from './components/UpdateRoute/DeleteEvent';
 import UpdateEvent from './components/UpdateRoute/UpdateEvent';
 
