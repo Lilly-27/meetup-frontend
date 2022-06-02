@@ -1,4 +1,24 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
+
+const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
+
+function EventForm() {
+  const initialState = { event_name: '', date: '' , tag: ''};
+  const [formState, setFormState] = useState(initialState);
+
+
+const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
+
+function EventForm() {
+    const navigate= useNavigate()
+  const initialState = { event_name: '', date: '' };
+  const [formState, setFormState] = useState(initialState);
+
+
+
 
 
 const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
@@ -7,18 +27,13 @@ function EventForm() {
   const initialState = { event_name: '', date: '' , tag: ''};
   const [formState, setFormState] = useState(initialState);
 
-import { useNavigate } from 'react-router-dom';
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
-function EventForm() {
-    const navigate= useNavigate()
-  const initialState = { event_name: '', date: '' };
-  const [formState, setFormState] = useState(initialState);
-//   const initialTag = { tag: '' }
-//   const[tagState, setTagState] = useState(initialTag)
+
+
   const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
+
 
 
   const handleSubmit = async (event) => {
@@ -95,7 +110,7 @@ function EventForm() {
       />
       <br/>
 
-  
+
     <label>
             Event Type: 
           <select onChange={handleChange} id="tag" type="text" value ={formState.tag}>
@@ -108,7 +123,12 @@ function EventForm() {
 
 
       <button type="submit">Submit</button>
-    </form>
+
+      <Link to={`/events`} >
+      <h3>Return to Homepage</h3>
+      </Link>
+      </form>
   );
-}}
+
+}}}
 export default EventForm;
