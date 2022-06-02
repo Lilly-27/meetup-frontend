@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
+    const navigate= useNavigate()
   const initialState = { event_name: '', date: '' };
   const [formState, setFormState] = useState(initialState);
 //   const initialTag = { tag: '' }
@@ -32,7 +33,7 @@ function EventForm() {
       },
       body: JSON.stringify(formState)
   })
-
+  navigate(`/events`)
     console.log(formState);
     
     setFormState(initialState);

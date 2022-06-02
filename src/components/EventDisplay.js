@@ -1,6 +1,7 @@
 import React, { useState, useEffect }from 'react'
 import { useParams, Link } from 'react-router-dom';
-
+import Header from './Header';
+import Footer from './Footer';
 const EventDisplay = () => {
     
     let {_id} = useParams();
@@ -22,10 +23,11 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     );
 
   return (
+    
       
       events.map(events=> (
     <div>
-        
+       
   
     
     <div>
