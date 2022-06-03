@@ -2,6 +2,7 @@
          bottom: 0}
 
 /* SIGN UP PAGE */
+
 /* .App {
     display:grid;
     place-items:center;
@@ -31,10 +32,12 @@
     display:grid;
     place-items:center;
 }
+
 body {
     margin: 0%;
     padding: 0%;
 }
+
 .form {
   width: 100%;
   height: 100%;
@@ -101,7 +104,8 @@ body {
   height: 40px;
   padding-left: 5px;
   font-size: 20px;
-}
+};
+
 /* SIGN UP - STEP TWO */
 .steptwo-container {
     height: 100%;
@@ -110,7 +114,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+};
 
 .steptwo-container input {
     margin: 5px;
@@ -118,7 +122,8 @@ body {
     height: 40px;
     padding-left: 5px;
     font-size: 20px;
-}
+};
+
 /* SIGN UP - FINAL STEP */
 .finalstep-container {
     height: 100%;
@@ -127,7 +132,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+};
 
 .finalstep-container input {
     margin: 5px;
@@ -135,7 +140,7 @@ body {
     height: 40px;
     padding-left: 5px;
     font-size: 20px;
-}
+};
 
 input {
     border: 2px solid rgba(83, 141, 207, 0.904);
@@ -148,4 +153,13 @@ input:focus {
 
 /* HEADER */
 
+.header-container {
+    display: flex;
+    margin: 0px;
+}
+
+
 /* FOOTER */
+.footer-container {
+    background-color: rgb(103, 100, 100);
+}
