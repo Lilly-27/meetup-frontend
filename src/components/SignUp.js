@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import StepOne from './SignUpForm/StepOne';
 import StepTwo from './SignUpForm/StepTwo';
 import FinalStep from './SignUpForm/FinalStep';
-import Success from './SignUpForm/Success';
 
 const URL = 'https://meetup-for-devs.herokuapp.com/api/users'
 
@@ -42,21 +41,19 @@ const SignUp = () => {
 
   const[step, setStep]=useState(0);
 
-  const FormSteps = ["Step One: Sign Up", "Step Two: Personal Info", "Step Three: Hobbies", "Success"];
+  const FormSteps = ["Step One: Sign Up", "Step Two: Personal Info", "Step Three: Hobbies"];
   const StepDisplay = () => {
     if (step === 0) {
       return <StepOne handleChange={handleChange} formState={formState}/>
     } else if (step === 1){
       return <StepTwo handleChange={handleChange} formState={formState}/>
-    } else if (step === 2){
-      return <FinalStep handleChange={handleChange} formState={formState}/>
     } else {
-      return <Success handleChange={handleChange} formState={formState}/>
+      return <FinalStep handleChange={handleChange} formState={formState}/>
     }
   }
 
   return (
-    <div className="form">
+    <form onSubmit={handleSubmit} className="form">
       <Header />
       <div className="form-progressbar"></div>
       <div className="form-container">
@@ -65,12 +62,27 @@ const SignUp = () => {
         </div>
         <div className="form-body">{StepDisplay()}</div>
         <div className="form-footer">
-          <button disabled={step === 0}onClick={() => {setStep((currStep) => currStep -1)}}>Previous</button>
-          <button disabled={step === FormSteps.length - 1}onClick={() => {setStep((currStep) => currStep +1)}}>Next</button>
+          <button 
+            disabled={step === 0}
+            onClick={() => {setStep((currStep) => currStep - 1)
+              }}>
+              Previous
+          </button>
+
+          <button 
+            onClick={() => {
+              if (step === FormSteps.length -1){
+                alert ("Congrats! Your account is set!")
+              } else {
+                setStep((currStep) => currStep +1)
+              }
+              }}>
+            {step === FormSteps.length - 1 ? "Submit" : "Next"}
+          </button>
         </div>
       </div>
       <Footer />
-    </div>
+    </form>
   )
 }
 
