@@ -45,13 +45,13 @@ const SignUp = () => {
   const FormSteps = ["Step One: Sign Up", "Step Two: Personal Info", "Step Three: Hobbies", "Success"];
   const StepDisplay = () => {
     if (step === 0) {
-      return <StepOne />
+      return <StepOne handleChange={handleChange} formState={formState}/>
     } else if (step === 1){
-      return <StepTwo />
+      return <StepTwo handleChange={handleChange} formState={formState}/>
     } else if (step === 2){
-      return <FinalStep />
+      return <FinalStep handleChange={handleChange} formState={formState}/>
     } else {
-      return <Success />
+      return <Success handleChange={handleChange} formState={formState}/>
     }
   }
 
