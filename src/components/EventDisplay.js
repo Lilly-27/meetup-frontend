@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 const EventDisplay = () => {
     
-    let {_id} = useParams();
+    let {id} = useParams();
 
 const [events, setEvents]= useState([])
 const url= `https://meetup-for-devs.herokuapp.com/api/events/`
@@ -26,12 +26,12 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     
       
       events.map(events=> (
-    <div className='display'>
+    <div className='display' key={events.id}>
        
   
     
     <div>
-        <Link to={`${events._id}`}key={events._id}>
+        <Link to={`${events._id}`}>
         <h1>{events.event_name}</h1>
         </Link>
         <img src ={events.event_picture} />
