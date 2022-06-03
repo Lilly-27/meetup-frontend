@@ -7,7 +7,9 @@ function StepOne({initialState}) {
       type="text" 
       placeholder="Email" 
       value={initialState.email}
+
       onChange={(e) => {initialState()
+
         
       }}
       required="true"/>

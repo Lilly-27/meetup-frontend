@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, Link, Route } from 'react-router-dom'
-import DeleteEvent from './DeleteEvent';
+import DeleteEvent from './UpdateRoute/DeleteEvent';
 
-function EventDetails(props) {
+function CoffeeId(props) {
     let {id} = useParams();
     const [event, setEvent] = useState(null);
     useEffect(() => {
-        fetch( `https://meetup-for-devs.herokuapp.com/api/events/${id}`)
+        fetch( `https://meetup-for-devs.herokuapp.com/api/coffeechats/${id}`)
         .then(res => res.json())
         .then(res => setEvent(res))
         .catch(console.error)
@@ -30,7 +30,6 @@ function EventDetails(props) {
           <div className="details">
             <h2>{event.date}</h2>
             <h2>{event.time}</h2>
-            {/* <h3>Address: <a href="https://www.google.com/maps/search/?api=1&query={{data.address}}">{{event.address}}</a></h3> */}
             <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
             <h2>{event.tag}</h2>
@@ -43,7 +42,7 @@ function EventDetails(props) {
           </div>
           <>
           <form >
-          <Link to={`/events/display/${id}/delete`}>
+          <Link to={`/events/coffee/${id}/delete`}>
          
      <button id="delete" >
             DELETE
@@ -53,7 +52,7 @@ function EventDetails(props) {
     </form>
 
     <form >
-          <Link to={`/events/display/${id}/update`}>
+          <Link to={`/events/coffee/${id}/update`}>
          
      <button id="update" >
             UPDATE
@@ -70,4 +69,4 @@ function EventDetails(props) {
       );
 }
 
-export default EventDetails
+export default CoffeeId
