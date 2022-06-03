@@ -25,19 +25,19 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
   return (
     
       
-      events.map(events=> (
-    <div className='display' key={events.id}>
+      events.map((events, index)=> (
+    <div key={index} className='display' >
        
   
     
-    <div>
+    <div >
         <Link to={`${events._id}`}>
-        <h1>{events.event_name}</h1>
+        <h1 key={events.event_name}>{events.event_name}</h1>
         </Link>
         <img src ={events.event_picture} />
     </div>
     
-    <div style={{
+    <div  style={{
           position:"initial",
           left: 0,
           bottom: 0,
