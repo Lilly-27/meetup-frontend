@@ -104,7 +104,7 @@ body {
   height: 40px;
   padding-left: 5px;
   font-size: 20px;
-};
+}
 
 /* SIGN UP - STEP TWO */
 .steptwo-container {
@@ -114,7 +114,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-};
+}
 
 .steptwo-container input {
     margin: 5px;
@@ -122,7 +122,7 @@ body {
     height: 40px;
     padding-left: 5px;
     font-size: 20px;
-};
+}
 
 /* SIGN UP - FINAL STEP */
 .finalstep-container {
@@ -132,7 +132,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-};
+}
 
 .finalstep-container input {
     margin: 5px;
@@ -140,7 +140,7 @@ body {
     height: 40px;
     padding-left: 5px;
     font-size: 20px;
-};
+}
 
 input {
     border: 2px solid rgba(83, 141, 207, 0.904);
@@ -155,11 +155,25 @@ input:focus {
 
 .header-container {
     display: flex;
-    margin: 0px;
+    flex-flow: row nowrap;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+.accounts {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-left: 50%;
+
 }
 
 
 /* FOOTER */
 .footer-container {
-    background-color: rgb(103, 100, 100);
+    background-color: rgb(62, 60, 60);
+
+}
+
+.create-event h4{
+    color:antiquewhite;
 }
