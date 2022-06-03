@@ -21,7 +21,7 @@ const EventHomepage = () => {
 
 return(
 <div className='homepage'>
-    <h1 className='homepage_banner'>Event Homepage</h1>
+    <h1 className='homepage_banner'>Meetup-For-Devs</h1>
     <Link to={`/event-form`}>
         <div className='new-event-btn'>
             <h2>Make a new event!</h2>
@@ -40,7 +40,7 @@ return(
         <div className='tags'>Coding Sessions</div>
      </Link>
     <div>
-        <h2 >Popular Events Banner</h2 >
+        <h2 >Popular Events</h2 >
         <div className='popular'>
             <div className=''></div>
             <Link to={`/events/display/62994e7e51ff41fa8f6bc5a6`} key={events.id}>
