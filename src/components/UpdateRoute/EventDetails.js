@@ -34,8 +34,6 @@ function EventDetails(props) {
             <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
             <h2>{event.tag}</h2>
-            <h2>{event.user}</h2>
-
             <h2>People attending: </h2>
             <ul>
               <li></li>
