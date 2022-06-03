@@ -9,10 +9,12 @@
 } */
 /* Event styling */
 .display {
+    border: black 1px solid;
     display:grid;
     place-items:center;
 }
 .homepage {
+    
     display:grid;
     place-items:center;
 }
@@ -21,6 +23,8 @@
     place-items:center;
 }
 .details-container {
+    border: black 1px solid;
+
     display:grid;
     place-items:center;
 }
