@@ -33,7 +33,7 @@ function SocialsId(props) {
             <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
             <h2>People attending: </h2>
-            
+            <img src="https://insidersecrets.com/wp-content/uploads/circular-headshots-e1461708075471-600x202.png" />
           </div>
           <>
           <form >
