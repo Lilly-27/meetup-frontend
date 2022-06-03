@@ -26,6 +26,7 @@ function UpdateEvent() {
         console.log(json)
         setFormState(json)
       }))
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const handleSubmit = async (event) => {

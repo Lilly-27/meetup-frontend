@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link, Route } from 'react-router-dom'
-import DeleteEvent from './UpdateRoute/DeleteEvent';
+import { useParams, Link } from 'react-router-dom'
 
 function CoffeeId(props) {
     let {id} = useParams();
@@ -10,6 +9,7 @@ function CoffeeId(props) {
         .then(res => res.json())
         .then(res => setEvent(res))
         .catch(console.error)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if (!event){

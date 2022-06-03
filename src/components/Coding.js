@@ -1,9 +1,8 @@
 import React, { useState, useEffect }from 'react'
-import { useParams, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 const Coding = () => {
     
-    let {id} = useParams();
 
 const [events, setEvents]= useState([])
 const url= `https://meetup-for-devs.herokuapp.com/api/codingsessions`
@@ -18,7 +17,9 @@ const url= `https://meetup-for-devs.herokuapp.com/api/codingsessions`
       
         })
         .catch(console.error)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []
+     
     );
 
   return (

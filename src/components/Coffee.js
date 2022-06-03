@@ -1,9 +1,8 @@
 import React, { useState, useEffect }from 'react'
-import { useParams, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 const Coffee = () => {
     
-    let {_id} = useParams();
 
 const [events, setEvents]= useState([])
 const url= `https://meetup-for-devs.herokuapp.com/api/coffeechats`
@@ -18,6 +17,7 @@ const url= `https://meetup-for-devs.herokuapp.com/api/coffeechats`
       
         })
         .catch(console.error)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []
     );
 

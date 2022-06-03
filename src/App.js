@@ -4,8 +4,7 @@ import EventDisplay from './components/EventDisplay';
 import EventHomepage from './components/Homepage/EventHomepage';
 import EventDetails from './components/UpdateRoute/EventDetails';
 import EventForm from './components/EventForm';
-import Header from './components/Header';
-import Footer from './components/Footer';
+
 import Show from './components/Show';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -15,7 +14,7 @@ import Coding from './components/Coding';
 import CoffeeId from './components/CoffeeId';
 import CodingId from './components/CodingId';
 import SocialsId from './components/SocialsId'
-import UserForm from './components/UserForm';
+
 
 import DeleteEvent from './components/UpdateRoute/DeleteEvent';
 import UpdateEvent from './components/UpdateRoute/UpdateEvent';

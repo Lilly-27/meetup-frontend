@@ -1,6 +1,6 @@
 
-import { useEffect, useState } from 'react';
-import { Routes, Route,useParams, useNavigate } from 'react-router-dom';
+
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 function DeleteEvent(props) {

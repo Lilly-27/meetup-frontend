@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
 
 function EventForm() {
   const initialState = { event_name: '', date: '' , tag: ''};

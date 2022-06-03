@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link, Route } from 'react-router-dom'
-import DeleteEvent from './DeleteEvent';
+import { useParams, Link } from 'react-router-dom'
 
 function EventDetails(props) {
     let {id} = useParams();
@@ -10,6 +9,7 @@ function EventDetails(props) {
         .then(res => res.json())
         .then(res => setEvent(res))
         .catch(console.error)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if (!event){
@@ -30,7 +30,7 @@ function EventDetails(props) {
           <div className="details">
             <h2>{event.date}</h2>
             <h2>{event.time}</h2>
-            <h3>Address: <a target="_blank" href={url}>{event.address}</a></h3>
+            <h3>Address: <a href={url}>{event.address}</a></h3>
             <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
             <h2>People attending: </h2>

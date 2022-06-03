@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom';
-import EventDetails from '../UpdateRoute/EventDetails';
+
 const EventHomepage = () => {
     const [events, setEvents] = useState([])
-    let {id} = useParams();
 
     useEffect(() => {
         fetch('https://meetup-for-devs.herokuapp.com/api/events')
