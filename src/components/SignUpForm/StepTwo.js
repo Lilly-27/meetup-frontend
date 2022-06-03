@@ -2,7 +2,8 @@ import React from 'react'
 
 function StepTwo({formState, handleChange}) {
   console.log(formState.name)
-  console.log(formState.address)
+  console.log(formState.user_location)
+  console.log(formState.link_to_github)
 
   return (
     <div className="steptwo-container">
