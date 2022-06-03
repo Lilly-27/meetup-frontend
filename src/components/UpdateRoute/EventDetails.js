@@ -20,7 +20,7 @@ function EventDetails(props) {
         </div>
     )
     }
-
+    let url=`https://www.google.com/maps/search/?api=1&query=${event.address}`
     return (
         <div className="details-container">
           <img
@@ -30,14 +30,11 @@ function EventDetails(props) {
           <div className="details">
             <h2>{event.date}</h2>
             <h2>{event.time}</h2>
-            {/* <h3>Address: <a href="https://www.google.com/maps/search/?api=1&query={{data.address}}">{{event.address}}</a></h3> */}
+            <h3>Address: <a target="_blank" href={url}>{event.address}</a></h3>
             <h2>{event.address}</h2>
             <h2>{event.event_blurb}</h2>
-            <h2>{event.tag}</h2>
             <h2>People attending: </h2>
-            <ul>
-              <li></li>
-            </ul>
+            
           </div>
           <>
           <form >

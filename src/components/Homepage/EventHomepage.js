@@ -43,17 +43,17 @@ return(
         <h2 >Popular Events Banner</h2 >
         <div className='popular'>
             <div className=''></div>
-            <Link to={`/events/display/629945e8769ff015203db36d`} key={events.id}>
+            <Link to={`/events/display/62994e7e51ff41fa8f6bc5a6`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>
             </Link>
-            <Link to={`/events/display/629945e8769ff015203db36c`} key={events.id}>
+            <Link to={`/events/display/62994e7e51ff41fa8f6bc5a7`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>
             </Link>
-            <Link to={`/events/display/629945e8769ff015203db36b`} key={events.id}>
+            <Link to={`/events/display/62994e7e51ff41fa8f6bc5af`} key={events.id}>
             <div className='popularEvents'>Popular event
             <img src={events.event_picture} />
             </div>
