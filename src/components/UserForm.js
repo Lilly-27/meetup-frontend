@@ -1,39 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-import { useNavigate } from 'react-router-dom';
+// API OR NOT
+const URL = 'https://meetup-for-devs.herokuapp.com/api/users'
 
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-function EventForm() {
-  const initialState = { event_name: '', date: '' , tag: ''};
+function UserForm() {
+  const initialState = { username: '', password: '' };
   const [formState, setFormState] = useState(initialState);
-
-
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-// function EventForm() {
-    const navigate= useNavigate()
-//   const [formState, setFormState] = useState(initialState);
-
-
-
-
-
-// const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-// function EventForm() {
-//   const initialState = { event_name: '', date: '' , tag: ''};
-//   const [formState, setFormState] = useState(initialState);
-
-
-
 
   const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
-
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,18 +21,16 @@ const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
       },
       body: JSON.stringify(formState)
   })
-  navigate(`/events`)
+
     console.log(formState);
     
-   setFormState(initialState);
-    
+    setFormState(initialState);
   };
-
-  
  
   return (
-    <form onSubmit={handleSubmit} className='event-form'>
-      <label htmlFor="event_name">Event Name: </label>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Name: </label>
+      {/* NEXT STEP WHEN DONE WITH E -> ADD VALUES JUST LIKE THIS */}
       <input
         id="event_name"
         type="text"
@@ -109,25 +83,16 @@ const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
       />
       <br/>
 
-
-    <label>
-            Event Type: 
-          <select onChange={handleChange} id="tag" type="text" value ={formState.tag}>
-            <option id="tag" value="please_select">Please choose an Option</option>
-            <option id="tag" value="coffee_chats">Coffee Chats</option>
-            <option id="tag" value="coding_sessions">Coding Sessions</option>
-            <option id= "tag" value="socials">Socials</option>
-          </select>
-          </label>
-
-
+      <label htmlFor="tag">Tag (test): </label>
+      <input
+        id="tag"
+        type="text"
+        onChange={handleChange}
+        value={formState.tag}
+      />
+    
       <button type="submit">Submit</button>
-
-      <Link to={`/events`} >
-      <h3>Return to Homepage</h3>
-      </Link>
-      </form>
+    </form>
   );
-
 }
-export default EventForm;
+export default UserForm;

@@ -1,13 +1,12 @@
 import React, { useState, useEffect }from 'react'
 import { useParams, Link } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-const EventDisplay = () => {
+
+const Coding = () => {
     
     let {id} = useParams();
 
 const [events, setEvents]= useState([])
-const url= `https://meetup-for-devs.herokuapp.com/api/events/`
+const url= `https://meetup-for-devs.herokuapp.com/api/codingsessions`
     useEffect(() => {
 
         fetch(url)
@@ -23,21 +22,20 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     );
 
   return (
-    
       
-      events.map((events, index)=> (
-    <div key={index} className='display' >
-       
+      events.map(events=> (
+    <div>
+        
   
     
-    <div >
-        <Link to={`${events._id}`}>
-        <h1 key={events.event_name}>{events.event_name}</h1>
+    <div>
+        <Link to={`${events._id}`}key={events._id}>
+        <h1>{events.event_name}</h1>
         </Link>
         <img src ={events.event_picture} />
     </div>
     
-    <div  style={{
+    <div style={{
           position:"initial",
           left: 0,
           bottom: 0,
@@ -55,4 +53,4 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     ))
     )}
 
-export default EventDisplay
+export default Coding

@@ -1,20 +1,28 @@
-// NEED TO INCLUDE PATHS FOR LINKS AS OF 5/25
+// NEED TO INCLUDE PATHS FOR LINKS TO OUR PROFILES AS OF 5/31
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Footer = () => { 
     return (
-        <section className="footer-container">
+        <div className="footer-container">
             <div className="create-event">
                 <h4>Create your own event.</h4>
+                <Link to={'/event-form'}>
                 <button>Get Started</button>
+                </Link>
             </div>
 
             <div className="links-container">
                 <div className="your-account">
                     <h4>Your Account</h4>
                     <ul>
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Log In</a></li>
+                        <li><Link to={`/signup`}>
+                        <div className='signup-footer'><h4>Sign Up</h4></div>
+                        </Link></li>
+
+                        <li><Link to={`/login`}>
+                        <div className='login-footer'><h4>Log In</h4></div>
+                        </Link></li>
                     </ul>
                 </div>
 
@@ -47,7 +55,7 @@ const Footer = () => {
                 </div>
             </div>
         
-        </section>
+        </div>
     )
 
 }

@@ -1,67 +1,59 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-import { useNavigate } from 'react-router-dom';
 
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
-function EventForm() {
-  const initialState = { event_name: '', date: '' , tag: ''};
+
+function UpdateEvent() {
+    const navigate = useNavigate()
+
+    let {id} = useParams();
+    const URL = `https://meetup-for-devs.herokuapp.com/api/events/${id}`
+
+  const initialState = {};
   const [formState, setFormState] = useState(initialState);
-
-
-const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-// function EventForm() {
-    const navigate= useNavigate()
-//   const [formState, setFormState] = useState(initialState);
-
-
-
-
-
-// const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
-
-// function EventForm() {
-//   const initialState = { event_name: '', date: '' , tag: ''};
-//   const [formState, setFormState] = useState(initialState);
-
-
-
-
-  const handleChange = event => {
+    const handleChange = event => {
     setFormState({ ...formState, [event.target.id]: event.target.value });
   };
 
+  useEffect(()=>{
 
+
+      console.log(id)
+      fetch(URL)
+      .then(res => res.json()
+      .then(json => {
+        console.log(json)
+        setFormState(json)
+      }))
+  },[])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
   
     await fetch(URL, {
-      method: 'post',
+      method: 'put',
       headers: {
           'Content-Type': 'application/json',
       },
       body: JSON.stringify(formState)
+     
   })
   navigate(`/events`)
     console.log(formState);
     
-   setFormState(initialState);
-    
+    setFormState(initialState);
   };
-
-  
- 
+ console.log(formState)
   return (
-    <form onSubmit={handleSubmit} className='event-form'>
+    <form onSubmit={handleSubmit} className='update'>
       <label htmlFor="event_name">Event Name: </label>
       <input
         id="event_name"
         type="text"
         onChange={handleChange}
         value={formState.event_name}
+        
       />
       <br/>
       <label htmlFor="date">Date: </label>
@@ -109,25 +101,20 @@ const URL = 'https://meetup-for-devs.herokuapp.com/api/events'
       />
       <br/>
 
+      <label htmlFor="tag">Tag (test): </label>
+      <input
+        id="tag"
+        type="text"
+        onChange={handleChange}
+        value={formState.tag}
+      />
+    
 
-    <label>
-            Event Type: 
-          <select onChange={handleChange} id="tag" type="text" value ={formState.tag}>
-            <option id="tag" value="please_select">Please choose an Option</option>
-            <option id="tag" value="coffee_chats">Coffee Chats</option>
-            <option id="tag" value="coding_sessions">Coding Sessions</option>
-            <option id= "tag" value="socials">Socials</option>
-          </select>
-          </label>
-
+   
 
       <button type="submit">Submit</button>
-
-      <Link to={`/events`} >
-      <h3>Return to Homepage</h3>
-      </Link>
-      </form>
+    </form>
   );
-
 }
-export default EventForm;
+
+export default UpdateEvent
