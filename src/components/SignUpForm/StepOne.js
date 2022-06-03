@@ -20,6 +20,7 @@ function StepOne({formState, handleChange}) {
       value={formState.password}
       onChange={handleChange}
       required />
+
     </div>
   )
 }

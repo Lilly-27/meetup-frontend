@@ -1,13 +1,12 @@
 import React, { useState, useEffect }from 'react'
 import { useParams, Link } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-const EventDisplay = () => {
+
+const Coffee = () => {
     
     let {_id} = useParams();
 
 const [events, setEvents]= useState([])
-const url= `https://meetup-for-devs.herokuapp.com/api/events/`
+const url= `https://meetup-for-devs.herokuapp.com/api/coffeechats`
     useEffect(() => {
 
         fetch(url)
@@ -23,11 +22,10 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     );
 
   return (
-    
       
       events.map(events=> (
-    <div className='display'>
-       
+    <div>
+        
   
     
     <div>
@@ -55,4 +53,4 @@ const url= `https://meetup-for-devs.herokuapp.com/api/events/`
     ))
     )}
 
-export default EventDisplay
+export default Coffee

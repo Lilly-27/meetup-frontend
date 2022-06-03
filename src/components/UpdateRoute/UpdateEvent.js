@@ -46,7 +46,7 @@ function UpdateEvent() {
   };
  console.log(formState)
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='update'>
       <label htmlFor="event_name">Event Name: </label>
       <input
         id="event_name"
