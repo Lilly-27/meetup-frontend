@@ -5,7 +5,7 @@ Meetup for Devs is an app where people can connect with fellow developers in the
 # Gif of our app
 When the app loads, you should see the following:
 
-*ADD GIF HERE*
+https://www.loom.com/share/67245813092a4d4786798f6489d4a8da
 
 # Technologies Used
 For the backend, we used:
