@@ -20,7 +20,7 @@ function CodingId(props) {
         </div>
     )
     }
-
+    let url=`https://www.google.com/maps/search/?api=1&query=${event.address}`
     return (
         <div className="details-container">
           <img
@@ -30,7 +30,7 @@ function CodingId(props) {
           <div className="details">
             <h2>{event.date}</h2>
             <h2>{event.time}</h2>
-            <h2>{event.address}</h2>
+            <h3>Address: <a href={url}>{event.address}</a></h3>
             <h2>{event.event_blurb}</h2>
             <h2>People attending: </h2>
             <img src="https://insidersecrets.com/wp-content/uploads/circular-headshots-e1461708075471-600x202.png" />
